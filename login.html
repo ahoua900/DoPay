@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login - DoPay</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link  rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <script src="js/bootstrap.min.js"></script>
+  <script src="main.js"></script>
+</head>
+<body>
+    <div class="content_formulaire" id="content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-6">
+                    <div class="form-text">
+                        <img src="Images/undraw2.png" height="300" alt="">
+                        <h1 class="text-center titre">Do<span class="titres">Pay</span></h1>
+                       <h4>Avec votre compte Do<span class="titres">Pay</span> assurez vos achats et vos ventes sur vos plateformes Lecoin et Jumia Deals .</h4>
+                       <p>Ouvrez des comptes épargnes, Payez, transférez et récevez de l'argent à/de vos proches de façon sécurisée et facile.</p>  
+                       
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="formulaire">
+                        <h4 class="text-center">Do<span class="titres">Pay</span> - Inscription</h4>                                     
+                        <form action="">
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="">Nom <span class="text-danger">*</span></label>
+                                    <input class="form-control form-control-sm" type="text" placeholder="......"   aria-label="example">
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="">Prénoms <span class="text-danger">*</span></label>
+                                    <input class="form-control form-control-sm" type="text" placeholder="......"   aria-label="example">
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="">Adresse mail <span class="text-danger">*</span></label>
+                                    <input class="form-control form-control-sm" type="email" placeholder="......"   aria-label="example">
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="">Contact <span class="text-danger">*</span></label>
+                                    <input class="form-control form-control-sm" id="contact"  type="text" placeholder="......"   aria-label="example">
+                                    
+                                </div>
+                            </div>
+                           
+                            <h5 class="ver"> <strong>Verifiez votre identité <span class="text-danger">*</span></strong> </h4>
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label >Le recto votre pièce d'identité <span class="text-danger">*</span></label>
+                                    <input class="form-control form-control-sm" type="file" placeholder="......"  aria-label="example">
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="">Mot de passe<span class="text-danger">*</span></label>
+                                    <input id="motdepasse" pattern="[0-9]" class="form-control form-control-sm" type="password" placeholder=".................." aria-label="example">
+                                </div>
+                            </div>
+                                <div class="verify-password" id="verify-password">
+                                    <p id="verify_tall"><i class="fa fa-check"></i> Le mot de passe doit contenir au moins 8 caractères</p>
+                                    <p id="verify_letter"><i class="fa fa-check"></i >Le mot de passe doit débuter par une lettre majuscule</p>
+                                </div>
+                                <div class="alert animate__animated " id="finish" role="alert">
+                                      <p class="text-success">&#128525; Merci d'avoir respecté les consignes <strong class="text-center">Mot de passe correct </strong></p>
+
+                                      <button class="btn-submit-register">Enregister</button>
+                                </div>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+            var contact = document.getElementById("motdepasse");
+            contact.addEventListener("input", function(e){
+                var value = e.target.value;
+                var notletter =   document.getElementById("verify_letter");
+                if(value[0] == value[0].toUpperCase() && value[0] != ""){      
+                notletter.style.color = "Green";
+                }else{
+                    notletter.style.color = "Red";
+                }
+            });
+            contact.addEventListener("input", function(e){
+                var value = e.target.value;
+                var notletter =   document.getElementById("verify_tall");
+                if(value.length >= 8 && value != ""){      
+                notletter.style.color = "Green";
+                }else{
+                    notletter.style.color = "Red";
+                }
+            });
+            contact.addEventListener("input", function(e){
+                var value = e.target.value;
+                var notletter =   document.getElementById("finish");
+                if(value.length >= 8 && value[0] == value[0].toUpperCase()){ 
+                    notletter.style.visibility = "visible";
+                    notletter.classList.add("animate__fadeIn");
+                    notletter.classList.remove("animate__fadeOut");
+                }else{
+                    notletter.style.visibility = "hidden";
+                    notletter.classList.add("animate__fadeOut");
+                    notletter.classList.remove("animate__fadeIn");
+                }
+            });
+              
+    </script>
+</body>
+</html>
