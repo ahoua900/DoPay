@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tableau de bord - IPG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link  rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.min.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="content"> 
+        <div  id="content">
+            <header>
+                <div class="pres">
+                    <h3>Do<span class="titres">Pay</span></h3>
+                    <p>Avec votre compte Do<span class="titres">Pay</span> votre argent dort tranquille &#128524; rechargez, transférez et recevez de l'argent en FCFA et en EUR.</p>
+                </div>
+                <div class="profil">
+                    <lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_jfozfthz.json"  background="transparent"  speed="1"  style="width: 100px; height: 70px;"  loop  autoplay></lottie-player>       
+                    <h6>Ahoua Elvis Ghislain</h6>
+                </div>
+            </header> 
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-sm-4">
+                        <div class="solde_section animate__animated animate__backInDown">
+                            <div class="solde">
+                                <h4 id="soldeactu">15000 </h4>
+                                <h4><span id="dev">FCFA</span></h4> 
+                            </div> 
+                            <button id="changemoney" onclick="myFunction()" class="btn btn-success">convertir en EUR</button>   
+                        </div>
+                         <div class="one_action col animate__animated animate__backInLeft">
+                            <div class="row justify-content-center">
+                                <lottie-player src="https://assets1.lottiefiles.com/private_files/lf30_O4WDjy.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player> 
+                                <h6 class="text-center">Recevoir de l'argent</h6>      
+                            </div>
+                         </div>
+                    </div>
+                    
+                    <div class="animate__animated animate__backInUp action_compte col-sm-7">
+                        <div class="formulaire_trans">
+                            <h4 class="text-center">Recevoir de l'argent</h4>
+                            <form action="">
+                                <div class="form-group ">
+                                    <label for="">Référence de la recharge<span class="text-danger">*</span></label>
+                                    <input class="form-control form-control-sm" type="text" placeholder="......"   aria-label="example">
+                                </div>
+                                <div class="form-group ">
+                                    <label for="">Montant à recevoir</label>
+                                    <input class="form-control form-control-sm" type="text" placeholder="......"   aria-label="example"> 
+                                </div>
+                                <button class="animate__animated btn-submit-register" type="submit">Valider</button>
+                            </form>
+                        </div>
+
+                        <h4>Autres actions</h4>
+                        <div class="row">                           
+                            <a href="#" target="blank"  class="one_action col">
+                                <div class="row justify-content-center">
+                                    <lottie-player src="https://assets6.lottiefiles.com/private_files/lf30_YnY6yd.json"  background="transparent"  speed="1"  style="width: 200px; height: 120px;"  loop  autoplay></lottie-player> 
+                                    <h6 class="text-center">Transférer de l'argent</h6>      
+                                </div>
+                            </a>
+                            <a href="#" target="blank"  class="one_action col">
+                                <div class="row justify-content-center">
+                                    <lottie-player src="https://assets6.lottiefiles.com/private_files/lf30_06ixtbay.json"  background="transparent"  speed="1"  style="width: 170px; height: 120px;"  loop  autoplay></lottie-player> 
+                                    <h6 class="text-center">Recharger mon compte</h6>      
+                                </div>
+                            </a>                
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            
+            
+        </div>            
+    </div>
+    <script>
+        var contact = document.getElementById("changemoney");
+        function myFunction(){
+            if(contact.innerText == "convertir en EUR"){
+                    var num = parseFloat(document.getElementById("soldeactu").innerText) / 650;
+                    contact.innerText = "convertir en FCFA";
+                    document.getElementById("soldeactu").innerText = num.toString();
+                    var x = document.querySelectorAll("#dev");
+                    for(var i=0; i <x.length ; i++){
+                        x[i].innerText = "EUR";
+                    }
+            }
+            else if(contact.innerText == "convertir en FCFA"){
+                var num = parseFloat(document.getElementById("soldeactu").innerText) * 650;
+                contact.innerText = "convertir en EUR";
+                document.getElementById("soldeactu").innerText = num.toString();
+                var x = document.querySelectorAll("#dev");
+                    for(var i=0; i < x.length ; i++){
+                        x[i].innerText = "FCFA";
+                    }
+            }
+        };
+        $(document).ready(function() {
+        $('#exampleData').DataTable();
+        $('#exampleData2').DataTable();
+} );
+    </script>
+</body>
+</html>

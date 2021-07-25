@@ -13,23 +13,185 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link  rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.min.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="content" id="content">
-        <header class="header container-fluid" id="navbar">
-            <div class="row">
-                <a href="#" class="col-sm-2 titre">
-                    <h1>Do<span>Pay</span></h1>
-                </a>
-                <a href="#" class="col-sm-10 contact">Contacts</a>
+    <div class="content"> 
+        <div  id="content">
+            <header>
+                <div class="pres">
+                    <h3>Do<span class="titres">Pay</span></h3>
+                    <p>Avec votre compte Do<span class="titres">Pay</span> votre argent dort tranquille &#128524; rechargez, transférez et recevez de l'argent en FCFA et en EUR.</p>
+                </div>
+                <div class="profil">
+                    <lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_jfozfthz.json"  background="transparent"  speed="1"  style="width: 100px; height: 70px;"  loop  autoplay></lottie-player>       
+                    <h6>Ahoua Elvis Ghislain</h6>
+                </div>
+            </header> 
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="solde_section animate__animated animate__backInDown col-sm-3">
+                        <h6>Hey Ahoua &#128525; votre solde actuel en <span id="dev">FCFA</span></h6>  
+                        <div class="solde">
+                            <h4 id="soldeactu">15000 </h4>
+                           <h4><span id="dev">FCFA</span></h4> 
+                        </div> 
+                        <button id="changemoney" onclick="myFunction()" class="btn btn-success">convertir en EUR</button>   
+                    </div>
+                    <div class="action_compte animate__animated animate__backInRight col-sm-8">
+                        <h4>Actions sur votre compte</h4>
+                        <div class="row">
+                            <a href="#" target="blank" class="one_action col">
+                                <div class="row justify-content-center">
+                                    <lottie-player src="https://assets6.lottiefiles.com/private_files/lf30_06ixtbay.json"  background="transparent"  speed="1"  style="width: 200px; height: 120px;"  loop  autoplay></lottie-player> 
+                                    <h6 class="text-center">Recharger le compte</h6>      
+                                </div>
+                            </a>
+                            <a href="#" target="blank"  class="one_action col">
+                                <div class="row justify-content-center">
+                                    <lottie-player src="https://assets6.lottiefiles.com/private_files/lf30_YnY6yd.json"  background="transparent"  speed="1"  style="width: 200px; height: 120px;"  loop  autoplay></lottie-player> 
+                                    <h6 class="text-center">Transférer de l'argent</h6>      
+                                </div>
+                            </a>
+                            <a href="#" target="blank"  class="one_action col">
+                                <div class="row justify-content-center">
+                                    <lottie-player src="https://assets1.lottiefiles.com/private_files/lf30_O4WDjy.json"  background="transparent"  speed="1"  style="width: 170px; height: 120px;"  loop  autoplay></lottie-player> 
+                                    <h6 class="text-center">Recevoir de l'argent</h6>      
+                                </div>
+                            </a>
+                             
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center animate__animated animate__backInUp">
+                    <div class="history_rece col">
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                    <h4 class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Historique des transferts
+                                    </h4>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <table id="exampleData" class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Date</th>
+                                                        <th>Destinateur</th>
+                                                        <th>Somme et dévise</th>
+                                                        <th>Référence</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>23 juil 2021</td>
+                                                        <td>John De</td>
+                                                        <td>13000 FCFA</td>
+                                                        <td>1452487896547R</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>23 juil 2021</td>
+                                                        <td>John De</td>
+                                                        <td>13000 FCFA</td>
+                                                        <td>1452487896547R</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>23 juil 2021</td>
+                                                        <td>John De</td>
+                                                        <td>13000 FCFA</td>
+                                                        <td>1452487896547R</td>
+                                                    </tr>
+                                                </tbody>
+                                        </table>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="history_trans col">
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                    <h4 class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                            Historique des transferts
+                                    </h4>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                            <table id="exampleData2" class="table table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Date</th>
+                                                            <th>Destinateur</th>
+                                                            <th>Somme et dévise</th>
+                                                            <th>Référence</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>23 juil 2021</td>
+                                                            <td>John De</td>
+                                                            <td>13000 FCFA</td>
+                                                            <td>1452487896547R</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>23 juil 2021</td>
+                                                            <td>John De</td>
+                                                            <td>13000 FCFA</td>
+                                                            <td>1452487896547R</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>23 juil 2021</td>
+                                                            <td>John De</td>
+                                                            <td>13000 FCFA</td>
+                                                            <td>1452487896547R</td>
+                                                        </tr>
+                                                    </tbody>
+                                            </table>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
             </div>
-        </header>
-        <div class="section-login">
-            <div class="container">
-                
-            </div>
-        </div>
+            
+            
+        </div>            
     </div>
+    <script>
+        var contact = document.getElementById("changemoney");
+        function myFunction(){
+            if(contact.innerText == "convertir en EUR"){
+                    var num = parseFloat(document.getElementById("soldeactu").innerText) / 650;
+                    contact.innerText = "convertir en FCFA";
+                    document.getElementById("soldeactu").innerText = num.toString();
+                    var x = document.querySelectorAll("#dev");
+                    for(var i=0; i <x.length ; i++){
+                        x[i].innerText = "EUR";
+                    }
+            }
+            else if(contact.innerText == "convertir en FCFA"){
+                var num = parseFloat(document.getElementById("soldeactu").innerText) * 650;
+                contact.innerText = "convertir en EUR";
+                document.getElementById("soldeactu").innerText = num.toString();
+                var x = document.querySelectorAll("#dev");
+                    for(var i=0; i < x.length ; i++){
+                        x[i].innerText = "FCFA";
+                    }
+            }
+        };
+        $(document).ready(function() {
+        $('#exampleData').DataTable();
+        $('#exampleData2').DataTable();
+} );
+    </script>
 </body>
 </html>
