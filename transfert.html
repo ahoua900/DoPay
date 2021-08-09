@@ -58,7 +58,7 @@
                             <form action="">
                                 <div class="form-group ">
                                     <label for="">Montant à transférer<span class="text-danger">*</span></label>
-                                    <input class="form-control form-control-sm" type="text" placeholder="......"   aria-label="example">
+                                    <input id="montant_send" class="form-control form-control-sm" type="text" placeholder="......"   aria-label="example">
                                 </div>
                                 <div class="form-group ">
                                     <label for="">Dévise</label>
@@ -73,8 +73,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">Récepteur <span class="text-danger">*</span></label>
-                                    <select name="pays" class="form-control form-control-sm" id="pays" >
-                                        <option value="">John Aplha</option>
+                                    <select name="pays" class="form-control form-control-sm" id="recep" >
+                                        <option value="John Aplha">John Aplha</option>
                                         <option value="...">...</option>
                                     </select> 
                                 </div>
@@ -107,6 +107,14 @@
         </div>            
     </div>
     <script>
+        var montant_send = document.getElementById("montant_send");
+            montant_send.addEventListener("input", function(e){
+            document.getElementById('montant').innerText = e.target.value;
+            });
+        var recep = document.getElementById("recep");
+        recep.addEventListener("input", function(e){
+            document.getElementById('expe').innerText  = e.target.value;
+            });
         var contact = document.getElementById("changemoney");
         function myFunction(){
             if(contact.innerText == "convertir en EUR"){

@@ -240,6 +240,15 @@ color: white ;
 
 }
 
+.view_password{
+display: flex;
+}
+.btn_viewpassword{
+padding: 0.2rem;
+border: none;
+border-radius: 2px;
+background-color: white;
+}
 
 
 
